@@ -23,7 +23,7 @@ ssh $ssh_options "$target" echo connected >/dev/null 2>/dev/null || {
 
 remote_user="$(ssh $ssh_options "$target" whoami 2>/dev/null)"
 remote_home="$(ssh $ssh_options "$target" pwd 2>/dev/null)"
-home_usage="$(ssh $ssh_options "$target" "du -sh ." 2>/dev/null)"
+home_usage="$(ssh $ssh_options "$target" "du -sh ~" 2>/dev/null)"
 home_entry_count="$(ssh $ssh_options "$target" "ls | wc -l" 2>/dev/null)"
 remote_time="$(ssh $ssh_options "$target" date 2>/dev/null)"
 
